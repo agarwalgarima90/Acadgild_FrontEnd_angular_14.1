@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="acadgild">
+	<head>
+		<title>Assignment 14.1</title>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.1/angular.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.1/angular-route.min.js"></script>
+		<script>
+			var myapp = angular.module('acadgild', ['ngRoute']);
+
+			myapp.controller('mycontroller1', function($scope, $rootScope) {
+				$rootScope.userInput = "Garima";
+			});
+
+			myapp.directive("ngDisplay", function($rootScope) {
+				return {
+					restrict : 'E',
+					scope: true,
+					template : "<input type='text' ng-model='testData'/> {{testData}}"
+				};
+			});
+
+
+		</script>
+	</head>
+	<body ng-controller="mycontroller1">
+
+		<ng-display></ng-display>
+	</body>
+</html>
